@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: aliceblue;
+            font-family: sans-serif;
+            padding: 50px;
+            animation: aparecer 1.5s ease-out;
+
+        }
+        .boton-volver{
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #D4AF37;
+            text-decoration: none;
+            border: 1px solid;
+        }
+        .boton-volver:hover{
+            background-color: #D4AF37;
+            color: black;
+        }
+        .boton-comprar{
+            display: inline-block;
+            margin-bottom: 20px;
+            color: chartreuse;
+            text-decoration: none;
+            border: 1px solid;
+        }
+        .boton-comprar:hover{
+            background-color: chartreuse;
+            color: black;
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="tienda.html" class="boton-volver" style="font-size: 10px; padding: 5px;">← regresar</a>
+    <div style="display: flex; align-items: center; margin: 0;">
+         <h1>LIBRO AZTIA</h1>
+         <img src="libro.png" alt="libro" style="width: 100px; padding-left: 100px;">
+    </div>
+    <a href="https://www.mercadolibre.com.mx/#from=homecom" target="_blank" class="boton-comprar" style="font-size: 10px; padding: 5px;"> COMPRAR </a>
+</body>
+</html>
