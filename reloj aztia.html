@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>RELOJ AZTIA</title>
+    <link rel="icon" href="reloj3.png">
    <style>
             body{
                 background-color: rgb(0, 0, 0);
@@ -30,10 +31,67 @@
                 from { opacity: 0; transform: translateY(10px); }
                 to { opacity: 1; transform: translateY(0); }
             }
+
+            .boton-pro {
+                background-color: #D4AF37;
+                color: white;
+                padding: 10px 10px;
+                border: none;
+                border-radius: 25px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .boton-pro:hover {
+                background-color: #D4AF37;
+                transform: scale(1.05);
+            }
+
+            .ventana-comprar {
+                background-color: black;
+                color: #D4AF37;
+                overflow-y: auto;
+                width: 90%;
+                max-width: 300px;
+                max-height: 80%;
+                max-height: 350px;
+                animation: aparecer .5s ease-out;
+            }
+
+            .ventana-comprar p {
+                word-wrap: break-word;
+                line-height: 1.6;
+            }
+
+            .ventana-comprar::-webkit-scrollbar {
+                display: none;
+            }
+
+            .glow-text {
+                color: #D4AF37;
+                font-weight: bold;
+                text-shadow: 
+                0 0 8px #D4AF37,
+                0 0 10px #D4AF37,
+                0 0 20px #D4AF37;
+            }
+
+            .glow-azul {
+                color: #03b4fa;
+                font-weight: bold;
+                text-shadow: 
+                0 0 8px #0da0f5,
+                0 0 10px #0da0f5,
+                0 0 20px #0da0f5; 
+            }
+            
         </style>    
 </head>
 <body>
     <a href="index.html" class="boton-volver" style="font-size: 10px; padding: 5px;"> ← regresar</a>
+    <hr>
     <ul>
         <h1 style="color: #D4AF37;">RELOJ AZTIA</h1>
     </ul>
@@ -41,13 +99,15 @@
     <div style="display: flex; align-items: center; margin-bottom: 0;">
         <img src="fondo cambiado.png" alt="reloj" style="width: 400px; margin: 0px;">
     </div>
+    <hr>
     <ul>
         <li>
-            El reloj aztia es un reloj que va mas alla de lo convencional tanto como la tecnologia actual como la comididad
-            y uso ficiente dentro de los ambitos de salud que necesitamos saber de nuestro cuerpo, es capaz de conectarce directamente
-            con otros productos aztia pudiendo compartir funciones futuristas propias de otros productos aztia
+            El <span class="glow-text">Reloj Aztia</span> es un reloj que va mas alla de lo convencional tanto como la tecnologia actual como la comididad
+            y uso eficiente dentro de los ambitos de salud que necesitamos saber de nuestro cuerpo, es capaz de conectarce directamente
+            con otros productos <span class="glow-text">Aztia</span> pudiendo compartir funciones <span class="glow-azul">Futurista</span> propias de otros productos <span class="glow-text">Aztia</span>
         </li>
     </ul>
+    <hr>
     <ul>
         <h1 style="color: #D4AF37;">DATOS</h1>
         <li>Datos del cuerpo</li>
@@ -56,5 +116,30 @@
         <li>Fotos 4k</li>
         <li>Soporte de IA</li>
     </ul>
-</body>
+    <hr>
+    <div style="text-align: center;">
+        <dialog id="miVentana" class="ventana-comprar">
+            <div tabindex="-1" autofocus>
+                <h1>RELOJ AZTIA</h1>
+                <p style="color: aliceblue;">
+                    ¿Quieres comprar el reloj AZTIA?
+                </p>
+                <div style="text-align: left;">
+                    <h1>PRECIO</h1>
+                    <p style="color: chartreuse;">
+                        100pesos
+                    </p>
+                    <p style="color: white;">"Como tener un doctor en tu brazo"</p>
+                </div>
+                <img src="reloj3.png" alt="" width="110px">
+            </div>
+            <button onclick="miVentana.close()" style="background-color: red;">Cerrar</button>
+            <a href="https://www.apple.com/mx/shop/buy-watch" target="_blank">
+                <button style="background-color: chartreuse;">comprar</button>
+            </a>
+        </dialog>
+            <button onclick="miVentana.showModal()" class="boton-pro">COMPRAR</button>
+        </div>
+    </body>
+</html>   
     

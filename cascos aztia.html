@@ -2,6 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Cascos VR AZTIA</title>
+        <link rel="icon" href="sin fondo.png">
         <style>
             body{
                 background-color: black;
@@ -29,22 +30,73 @@
                 from { opacity: 0; transform: translateY(10px); }
                 to { opacity: 1; transform: translateY(0); }
             }
+            
+            .boton-pro {
+                background-color: #D4AF37;
+                color: white;
+                padding: 10px 10px;
+                border: none;
+                border-radius: 25px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .boton-pro:hover {
+                background-color: #a78a2e;
+                transform: scale(1.05);
+            }
+
+            .ventana-comprar {
+                background-color: black;
+                color: #D4AF37;
+                overflow-y: auto;
+                width: 90%;
+                max-width: 300px;
+                max-height: 80%;
+                max-height: 350px;
+                animation: aparecer .5s ease-out;
+            }
+
+            .ventana-comprar p {
+                word-wrap: break-word;
+                line-height: 1.6;
+            }
+
+            .ventana-comprar::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .glow-text {
+                color: #D4AF37;
+                font-weight: bold;
+                text-shadow: 
+                0 0 8px #D4AF37,
+                0 0 10px #D4AF37,
+                0 0 20px #D4AF37;
+            }
+
         </style>    
     </head>
     <body style="background-color: black; color: white; animation: aparecer 1.5s;">
         <a href="index.html" class="boton-volver" style="font-size: 10px; padding: 5px;">← regresar </a>
+        <hr>
          <ul>
             <h1 style="font-size: 70x; color: #D4AF37;">CASCOS VR AZTIA</h1>
          </ul>
-         <hr>
+        <hr>
         <img src="cazcos detalles 2.png" alt="cascos" style="width: 400px; margin: 30px;"> 
+        <hr>
         <ul style="margin-bottom: 50px;">
             <li>
-                Los Cascos Aztia son mas que otra experiencia de realidad
-                virtual es una forma de ayudar a las personas con dificultades para moverce o difirentes dificultades tanto fisicas como mentales con un estilo
+                Los <span class="glow-text">Cascos Aztia</span> son mas que otra experiencia de realidad
+                virtual es una forma de ayudar a las personas con dificultades
+                para moverce o difirentes dificultades tanto fisicas como mentales con un estilo
                 mas inovador
             </li> 
         </ul>
+        <hr>
         <ul>
             <h1 style="color: #D4AF37;">DETALLES</h1>
             <li>Resolucion 4k</li>
@@ -53,6 +105,35 @@
             <LI>experiencia inmersivA</LI>
             <LI>Ayuda del dia a dia</LI>
         </ul>
-    
+        <hr>
+        <div style="text-align: center;">
+            <dialog id="miVentana" class="ventana-comprar">
+                <div tabindex="-1" autofocus>
+                    <h1>CASCOS AZTIA</h1>
+                    <p style="color: aliceblue;">
+                        ¿Quieres comprar los Cascos AZTIA?
+                    </p>
+                    <div style="text-align: left;">
+                        <h1>PRECIOS</h1>
+                        <p style="color: chartreuse;">
+                            1,200,50$D
+                        </p>
+                        <p style="color: white;">
+                            "No estas haciendo una compra estas invirtiendo en tu futuro"
+                        </p>
+                    </div>
+                    <img src="sin fondo.png" alt="" width="110px">
+                </div>
+                <button onclick="miVentana.close()" style="background-color: red;">Cerrar</button>
+                <a href="https://www.apple.com/apple-vision-pro/" target="_blank">
+                    <button style="background-color: chartreuse;">Comprar </button>
+                </a>
+            </dialog>
+            <div style="align-items: center; margin: 0;">
+                <img src="imagen aztia cascos accion.png" alt="" style=" width: 80%;margin: 30px;">
+            </div>
+            <hr>
+                <button onclick="miVentana.showModal()" class="boton-pro">Comprar</button>
+        </div>
     </body>
-</html>
+</html> 

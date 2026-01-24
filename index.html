@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>AZTIA</title>
+        <link rel="icon" href="sooool2.png">
         <style>
             body{
                 background-color: black;
@@ -10,25 +11,62 @@
                 font-family: sans-serif;
                 padding: 50px;
                 animation: aparecer 1.5s ease-out;
-            }
-            .boton-volver{
-                display: inline-block;
-                margin-bottom: 20px;
-                color: #D4AF37;
-                text-decoration: none;
-                border: 1px solid #D4AF37;
-                padding: 10px;
-                transition: 0.3s;
-            }
-
-            .boton-volver:hover {
-                background-color: #D4AF37;
-                color: black;
-            }
-            
+            }            
             @keyframes aparecer {
                 from { opacity: 0; transform: translateY(10px); }
                 to { opacity: 1; transform: translateY(0); }
+            }
+
+            .logo-instagram {
+                width: 20px;
+                fill: #D4AF37;
+                transition: all 0.3s ease;
+            }
+
+            .logo-instagram:hover {
+                filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.9));
+                transform: scale(1.1);
+                fill: #ffdf00;
+            } 
+
+            .contenedor-video {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                padding: 20px 0;
+            }
+
+            .glow-text {
+                color: #D4AF37;
+                font-weight: bold;
+                text-shadow: 
+                0 0 8px #D4AF37,
+                0 0 10px #D4AF37,
+                0 0 20px #D4AF37;
+            }
+
+            .glow-azul {
+                color: #0da0f5;
+                font-weight: bold;
+                text-shadow: 
+                0 0 8px #0da0f5,
+                0 0 10px #0da0f5,
+                0 0 20px #0da0f5;
+            }
+            .texto-mexico {
+                font-weight: bold;
+                background: linear-gradient(to right,
+                #006847 33%,
+                #FFFFFF 33%,
+                #FFFFFF 66%,
+                #CE1126 66%
+                );
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
             }
         </style>    
     </head>
@@ -36,34 +74,49 @@
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 50px; color: aliceblue;">
             <h1 style="color: #D4AF37;">AZTIA</h1>
             <P style="max-width: 600px; margin-bottom: 40px;">
-                Aztia es una empresa mexicana que busca la excelencia en el termino que conlleva ser una empresa grande y una de las primeras mexicanas 100%
+                <span class="glow-text">Aztia</span>es una empresa <span class="texto-mexico">Mexicana</span> que busca la excelencia en el termino que conlleva ser una empresa grande y una de las primeras mexicanas 100%
             </P>
             <h1 style="color: #D4AF37;">MEXICANA</h1>
-            <p>Con esto aztia busca posicionarce dentro de las empresas mas grandes existentes a demas de impulsar la tecnologia en todo MEXICO</p>
+            <p>
+                Con esto <span class="glow-text">Aztia</span> busca posicionarce dentro de las empresas mas grandes existentes a demas de impulsar la tecnologia en todo <span class="texto-mexico">MEXICO</span> 
+            </p>
         </div>
         <hr>
         <h1 style="color: #D4AF37;">PRDUCTOS</h1>
         <div style="display: flex; align-items: center; margin: 10px;">
             <a href="cascos aztia.html"><img src="sin fondo.png" alt="" width="110px padding" style="padding-right: 20px;"></a>
-            <p>Los cascos Aztia son un producto futurista que tiene como proposito ayudar a las personas con problemas de movilidad ayudando y recuperando, tambien
+            <p>Los <span class="glow-text">Cascos Aztia</span> son un producto <span class="glow-azul">Futuristas</span> que tiene como proposito ayudar a las personas con problemas de movilidad ayudando y recuperando, tambien
                 es util para aprender de una forma mas inmersiva y no solo leyendo o viendo videos si no viviendo la experiencia
             </p>
         </div>
         <div style="display: flex; align-items: center; margin: 10px;">
             <a href="reloj aztia.html"><img src="reloj3.png" alt="" width="110px" style="padding-right: 20px;"></a>
-            <p>El reloj aztia es un reloj futurista que sus usos pueden ir mas alla que con la ayuda al hacer ejercio o simplemente ver la hora </p>
+            <p>El <span class="glow-text">Reloj Aztia</span> es un reloj <span class="glow-azul">Futurista</span> que sus usos pueden ir mas alla que con la ayuda al hacer ejercio o simplemente ver la hora </p>
         </div>
         <div style="display: flex; align-items: center; margin: 10px;">
             <a href="tienda.html"><img src="shop.png" alt="" width="110px" style="padding-right: 20px;"></a>
-            <p>Tienda Aztia aqui podras conseguir distintos productos aztia ya que queremos expandir a aztia a cosas mas utiles del dia a dia</p>
+            <p>La <span class="glow-text">Tienda Aztia</span> aqui podras conseguir distintos productos aztia ya que queremos expandir a aztia a cosas mas utiles del dia a dia</p>
 
         </div>
         <hr>
-        <div>
+        <div style="text-align: center;">
             <h1 style="color: #D4AF37;">PROPOSITO</h1>
-            <li>
-                tenemos como principal proposito queremos financiar o promocionar aztia como una empresa real y no dejarlo como proyecto
-            </li>
+            <p style="margin: 20px;">
+                 tenemos como principal proposito queremos financiar o promocionar <span class="glow-text">Aztia</span>
+                 como una empresa real y no dejarlo como proyecto
+            </p> 
+                
+        </div>
+        <hr>
+        <div class="contenedor-video">
+            <video src="video vision pro.mp4" width="90%" height="20%" autoplay loop muted></video>
+        </div>
+        <hr>
+        <div style="text-align: center; width: 100%; margin-top: 50px;">
+            <a href="https://www.instagram.com/aztia_mx/?next=%2F" target="_blank" style="text-decoration: none;">
+                <img src="instagram nuevo.png" alt="" class="logo-instagram">
+            </a>
         </div>
     </body>
+    
 </html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ROPA AZTIA</title>
+    <link rel="icon" href="tienda de ropa.png">
+    <style>
+        body{
+            background-color: black;
+            color: aliceblue;
+            font-family: sans-serif;
+            padding: 50px;
+            animation: aparecer 1.5s ease-out;
+        }
+
+        .boton-volver {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #D4AF37;
+            text-decoration: none;
+            border: 1px solid #D4AF37;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        .boton-volver:hover {
+            background-color: #D4AF37;
+            color: black;
+        }
+        
+        .boton-pro {
+            background-color: #D4AF37;
+            color: white;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .boton-pro:hover {
+            background-color: #D4AF37;
+            transform: scale(1.05);
+        }
+
+        @keyframes aparecer {
+                from { opacity: 0; transform: translateY(10px);}
+                to { opacity: 1; transform: translateY(0);}
+        }
+
+        .seccion {
+            padding: 20px;
+            animation: aparecer 0.5s;
+        }
+
+        @keyframes aparecer{
+            from { opacity: 0;}
+            to { opacity: 1;}
+        }
+
+        .glow-text {
+            color: #D4AF37;
+            font-weight: bold;
+            text-shadow:
+            0 0 8px #D4AF37,
+            0 0 10px #D4AF37,
+            0 0 20px #D4AF37;
+        }
+
+        .menu-horizontal {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            gap: 10px;
+            padding: 10px;
+            width: 100%;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .menu-horizontal::-webkit-scrollbar {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="tienda.html" class="boton-volver" style="font-size: 10px; padding: 5px;">← regresar</a>
+    <hr>
+    <div style="display: flex; text-align: center; margin: 10px;">
+        <h1 style="color: #D4AF37;">ROPA AZTIA</h1>
+        <img src="tienda de ropa.png" alt="" style="width: 90px; padding-left: 150px;;">
+    </div>
+    <hr>
+    <nav class="menu-horizontal">
+        <button onclick="cambiarSeccion('Playeras')" class="boton-pro">Playeras</button>
+        <button onclick="cambiarSeccion('Pantalones')" class="boton-pro">Pantalones</button>
+        <button onclick="cambiarSeccion('Tenis')" class="boton-pro">Tenis</button>
+        <button onclick="cambiarSeccion('Chamarras')" class="boton-pro">Chamarras</button>
+        <button onclick="cambiarSeccion('Relojes')" class="boton-pro">Relojes</button>
+        <button onclick="cambiarSeccion('Gorras')" class="boton-pro">Gorras</button>
+    </nav>
+    <hr>
+    <div id="Playeras" class="seccion">
+        <h1 class="glow-text">Playeras</h1>
+        <hr>
+        <p>
+            Los envios son 100% seguros y su podructo se mostrara los detalles al pasar por paqueteria y antes de
+            llegar a su destino para evitar mal entendidos y estafas con los productos ofrecidos y lo que espera el cliente
+        </p>
+        <hr>
+        <div style="display: flex; flex-wrap: wrap; text-align: center; margin: 10px;">
+            <img src="playera1.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="playera2.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="playera3.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="fras.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="fut2.webp" alt="" style="width: 110px; margin: 20px;"> 
+            <img src="fut3.avif" alt="" style="width: 110px; margin: 20px;"> 
+            <img src="fut4.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="fut5.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="fut6.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="fut7.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="fut8.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="playera1.jpg" alt="" style="width: 110px; margin: 20px;">
+        </div>
+    </div>
+    <div id="Pantalones" class="seccion" style="display: none;">
+        <h1 class="glow-text">Pantalones</h1>
+        <hr>
+        <p>
+            Aqui podras encontrar variedad de productos igual con la misma seguridad que se aplican en las playeras se aplica 
+            en todos los apartados de ropa y productos aztia para garantizar seguridad a la hora de pedir productos de la tienda aztia
+        </p>
+        <hr>
+        <div style="display: flex; flex-wrap: wrap; text-align: center; margin: 0px;">
+            <img src="pantalones1.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="pantalones2.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="pantalones3.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="pantalones4.jpg" alt="" style="width: 110px; margin: 20px;">
+            <img src="pantalones5.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="pantalones6.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="pantalones7.jpg" alt="" style="width: 110px; margin: 20px;">
+            <img src="pantalones8.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="pantalones9.jpeg" alt="" style="width: 110px; margin: 20px;">
+        </div>
+    </div>
+    <div id="Tenis" class="seccion" style="display: none;">
+        <h1 class="glow-text">Tenis</h1>
+        <hr>
+        <p>
+            Aqui encontraras zapatos de la mejor calidad con variedad de marcas y con la seguridad que ofrece aztia al mostrarte 
+            los productos antes de enviarlos para asi evitar estafas o confuciones
+        </p>
+        <hr>
+        <div style="display: flex; flex-wrap: wrap; text-align: center; margin: 0px;">
+            <img src="tenis1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="tenis1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="tenis1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="tenis1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="tenis1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="tenis1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="tenis1.webp" alt="" style="width: 110px; margin: 20px;">
+        </div>
+        
+    </div>
+    <div id="Chamarras" class="seccion" style="display: none;">
+        <h1 class="glow-text">Chamarras</h1>
+        <hr>
+        <p>
+            Aqui podras encontrar todo tipo de chmarras y podras incluso hacer un diseño a tu preferencia
+        </p>
+        <hr>
+        <div style="display: flex; flex-wrap: wrap; text-align: center; margin: 0px;">
+            <img src="chamarra1.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="chamarra1.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="chamarra1.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="chamarra1.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="chamarra1.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="chamarra1.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="chamarra1.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="chamarra1.jpeg" alt="" style="width: 110px; margin: 20px;">
+            <img src="chamarra1.jpeg" alt="" style="width: 110px; margin: 20px;">
+        </div>
+    </div>
+    <div id="Relojes" class="seccion" style="display: none;">
+        <h1 class="glow-text">Relojes</h1>
+        <hr>
+        <p>
+            Aqui podras encontrar todo tipo de relojes 
+        </p>
+        <hr>
+        <div style="display: flex; flex-wrap: wrap; text-align: center; margin: 0px;">
+            <img src="reloj1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="reloj1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="reloj1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="reloj1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="reloj1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="reloj1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="reloj1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="reloj1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="reloj1.webp" alt="" style="width: 110px; margin: 20px;">
+        </div>
+    </div>
+    <div id="Gorras" class="seccion" style="display: none;">
+        <h1 class="glow-text">Gorras</h1>
+        <hr>
+        <p>
+            Aqui podras encontrar gorras de todas las marcas y diseños
+        </p>
+        <hr>
+        <div style="display: flex; flex-wrap: wrap; text-align: center; margin: 0px;">
+            <img src="gorra1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="gorra1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="gorra1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="gorra1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="gorra1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="gorra1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="gorra1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="gorra1.webp" alt="" style="width: 110px; margin: 20px;">
+            <img src="gorra1.webp" alt="" style="width: 110px; margin: 20px;">
+        </div>
+    </div>
+    <script>
+        function cambiarSeccion(idSeccion) {
+            const secciones = document.querySelectorAll('.seccion');
+            secciones.forEach(sec => {
+                sec.style.display = 'none';
+            });
+            document.getElementById(idSeccion).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
