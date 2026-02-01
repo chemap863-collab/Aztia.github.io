@@ -284,30 +284,46 @@
             </div>
         </div>
     </div>
-     <div style="text-align: center;">
+        <div style="text-align: center;">
             <dialog id="miVentana" class="ventana-comprar">
                 <div tabindex="-1" autofocus>
-                    <h1>COMPRAR</h1>
-                    <p style="color: aliceblue;">"Rellena los datos para poder comprar tu gorra"</p>
-                    <div style="text-align: left;">
+                    <div style="background-image: url(fondo\ 2.jpg); background-size: cover; background-position: center; background-attachment: fixed;">
+                        <h1>COMPRAR</h1>
+                        <p style="color: aliceblue;">"Rellena los datos para poder comprar tu gorra"</p>
                         <form action="https://formspree.io/f/mbdkrzzn" method="post">
-                            <label>Nombre De Cliente</label>
-                            <input type="text" name="Nombre" required>
+                            <div style="text-align: left; padding-bottom: 20px;">
+                                <label style="display: block;">¿Eres estudiante?</label>
+                                <select name="¿Eres_Estudiante?" id="si_no">
+                                    <option value="No">NO</option>
+                                    <option value="Si">SI</option>
+                                </select>
+                            </div>
+                            <div style="text-align: left; padding-bottom: 20px;">
+                                 <label>Nombre De Cliente</label>
+                                 <input type="text" name="Nombre" required>
+                            </div>
+                            <div style="text-align: left; padding-bottom: 20px;">
+                                <label style="display: block;">Gorra</label>
+                                <select name="producto_elegido" id="Opciones_producto" required>
+                                     <option value="" disabled selected style="width: 100%;">Elige una opcion</option>
+                                     <option value="Gorra_CT_X_BARBAS_HATS">Gorra CT X BARBAS HATS</option>
+                                     <option value="Gorra_NOse_x_BARBAS_HATS">Gorra nose la verdad</option>
+                                </select>
+                            </div>
+                            <div style="text-align: left; padding-bottom: 20px;">
+                                <label style="display: block;">Cantidad</label>
+                                <input type="text" name="Cantidad" required>
+                            </div>
+                            <div style="text-align: left; padding-bottom: 20px;">
+                             <label>Tu correo (Para responderte)</label>
+                             <input type="email" name="email_cliente" required>
+                            </div>
 
-                            <label>Pedidos</label>
-                            <textarea name="detalles_pedido" required></textarea>
-
-                            <label for="">Tu Correo (Para responderte)</label>
-                            <input type="email" name="email_cliente" required>
-
-                            <button type="submit">Enviar Pedidos</button>
+                            <button onclick="miVentana.close()" style="background-color: red;">Cerrar</button>
+                            <button type="submit" style="background-color: chartreuse;">Enviar Pedidos</button>
                         </form>
                     </div>
-                    <img src="sin fondo.png" alt="" width="110px">
                 </div>
-                <button onclick="miVentana.close()" style="background-color: red;">Cerrar</button>
-                    <button style="background-color: chartreuse;">Comprar </button>
-                </a>
             </dialog>
             <hr>
             <button onclick="miVentana.showModal()" class="boton-pro">Comprar</button>
