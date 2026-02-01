@@ -28,7 +28,12 @@
             background-color: #D4AF37;
             color: black;
         }
-        
+
+          @keyframes aparecer {
+                from { opacity: 0; transform: translateY(10px);}
+                to { opacity: 1; transform: translateY(0);}
+        }
+
         .boton-pro {
             background-color: #D4AF37;
             color: white;
@@ -46,11 +51,34 @@
             transform: scale(1.05);
         }
 
-        @keyframes aparecer {
-                from { opacity: 0; transform: translateY(10px);}
-                to { opacity: 1; transform: translateY(0);}
+        .ventana-comprar {
+            background-color: black;
+            color: #D4AF37;
+            overflow-y: auto;
+            width: 90%;
+            max-width: 300px;
+            max-height: 80%;
+            max-height: 350px;
+            animation: aparecer .5s ease-out;
         }
 
+        .ventana-comprar p {
+            word-wrap: break-word;
+            line-height: 1.6;
+        }
+
+        .ventana-comprar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .imagen-box {
+            flex: 0 0 250px;
+        }
+
+        .imagen-box img {
+            width: 80%;
+            height: auto;
+        }
         .seccion {
             padding: 20px;
             animation: aparecer 0.5s;
@@ -86,6 +114,7 @@
             display: none;
         }
 
+        
     </style>
 </head>
 <body style="padding: 10px;">
@@ -255,20 +284,34 @@
             </div>
         </div>
     </div>
-    <div>
-        <form action="https://formspree.io/f/mbdkrzzn" method="post">
-            <label>Nombre Del Cliente</label>
-            <input type="text" name="Nombre" required>
+     <div style="text-align: center;">
+            <dialog id="miVentana" class="ventana-comprar">
+                <div tabindex="-1" autofocus>
+                    <h1>COMPRAR</h1>
+                    <p style="color: aliceblue;">"Rellena los datos para poder comprar tu gorra"</p>
+                    <div style="text-align: left;">
+                        <form action="https://formspree.io/f/mbdkrzzn" method="post">
+                            <label>Nombre De Cliente</label>
+                            <input type="text" name="Nombre" required>
 
-            <label for="">Pedidos</label>
-            <textarea name="detalles_pedido" required></textarea>
+                            <label>Pedidos</label>
+                            <textarea name="detalles_pedido" required></textarea>
 
-            <label for="">Tu correo (Para responderte)</label>
-            <input type="email" name="email_cliente" required>
+                            <label for="">Tu Correo (Para responderte)</label>
+                            <input type="email" name="email_cliente" required>
 
-            <button type="submit">Enviar Pedidos</button>
-        </form>
-    </div>
+                            <button type="submit">Enviar Pedidos</button>
+                        </form>
+                    </div>
+                    <img src="sin fondo.png" alt="" width="110px">
+                </div>
+                <button onclick="miVentana.close()" style="background-color: red;">Cerrar</button>
+                    <button style="background-color: chartreuse;">Comprar </button>
+                </a>
+            </dialog>
+            <hr>
+            <button onclick="miVentana.showModal()" class="boton-pro">Comprar</button>
+        </div>
     <script>
         function cambiarSeccion(idSeccion) {
             const secciones = document.querySelectorAll('.seccion');
