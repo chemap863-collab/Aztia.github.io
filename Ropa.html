@@ -114,7 +114,41 @@
             display: none;
         }
 
+        .contenedor-producto {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+            margin: 40px auto;
+            max-width: 900px;
+        }
         
+        .imagen-box {
+            flex: 0 0 250px;
+        }
+
+        .imagen-box img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media ( max-width:768px) {
+            .contenedor-producto {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding: 0 20px;
+            }
+
+            .imagen-box {
+                flex: 0 0 auto;
+                width: 180px;
+            }
+
+            .texto-descripcion {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body style="padding: 10px;">
@@ -292,11 +326,42 @@
                         <p style="color: aliceblue;">"Rellena los datos para poder comprar tu gorra"</p>
                         <form action="https://formspree.io/f/mbdkrzzn" method="post">
                             <div style="text-align: left; padding-bottom: 20px;">
-                                <label style="display: block;">¿Eres estudiante?</label>
-                                <select name="¿Eres_Estudiante?" id="si_no">
+                                <label for="pregunta_si_no" style="display: block;">¿Eres estudiante?</label>
+                                <select name="¿Eres_Estudiante?" id="pregunta_si_no" onchange="verificarOpcion()" required>
+                                    <option value="" disabled selected style="width: 100%;"></option>
                                     <option value="No">NO</option>
                                     <option value="Si">SI</option>
                                 </select>
+                                <div id="cuadro_extra" style="display: none; margin-top: 20px;">
+                                    <label for="opciones_extra" style="display: block;">Grado</label>
+                                    <select name="Grado_y_Grupo" id="opciones_extra" style="display: block;" required>
+                                        <option value="" disabled selected style="width: 100%;"></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                    <div style="margin-top: 20px;">
+                                        <label for="Grupo" style="display: block;">Grupo</label>
+                                        <select name="Grupo" id="grupo" required>
+                                            <option value="" disabled selected style="width: 100%;"></option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </div>
+                                    <div style="margin-top: 20px;">
+                                        <label for="Turno" style="display: block;">Turno</label>
+                                        <select name="Turno" id="turno" required>
+                                            <option value="" disabled selected style="width: 100%;"></option>
+                                            <option value="Matutino">Matutino</option>
+                                            <option value="Vespertino">Vespertino</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
                             </div>
                             <div style="text-align: left; padding-bottom: 20px;">
                                  <label>Nombre De Cliente</label>
@@ -318,10 +383,13 @@
                              <label>Tu correo (Para responderte)</label>
                              <input type="email" name="email_cliente" required>
                             </div>
-
-                            <button onclick="miVentana.close()" style="background-color: red;">Cerrar</button>
-                            <button type="submit" style="background-color: chartreuse;">Enviar Pedidos</button>
+                            <div style="text-align: right;">
+                                <button type="submit" style="background-color: chartreuse;"> Enviar Pedidos</button>
+                            </div>
                         </form>
+                            <div style="text-align: left; margin-top: -22px;">
+                                <button onclick="miVentana.close()" style="background-color: red;"> Cerrar</button>
+                            </div>
                     </div>
                 </div>
             </dialog>
@@ -335,6 +403,17 @@
                 sec.style.display = 'none';
             });
             document.getElementById(idSeccion).style.display = 'block';
+        }
+
+        function verificarOpcion() {
+            const seleccion = document.getElementById('pregunta_si_no').value;
+            const cuadroExtra = document.getElementById('cuadro_extra');
+            
+            if(seleccion === 'Si') {
+                cuadroExtra.style.display = 'block';
+            } else {
+                cuadroExtra.style.display = 'none';
+            }
         }
     </script>
 </body>
