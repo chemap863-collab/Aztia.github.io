@@ -322,8 +322,10 @@
             <dialog id="miVentana" class="ventana-comprar">
                 <div tabindex="-1" autofocus>
                     <div style="background-image: url(fondo\ 2.jpg); background-size: cover; background-position: center; background-attachment: fixed;">
-                        <h1>COMPRAR</h1>
-                        <p style="color: aliceblue;">"Rellena los datos para poder comprar tu gorra"</p>
+                        <h1 id="tituloCompra">COMPRAR</h1>
+                        <p id="DescriCompra" style="color: aliceblue;">
+                            "Rellena los datos para poder comprar tu gorra"
+                        </p>
                         <form action="https://formspree.io/f/mbdkrzzn" method="post">
                             <div style="text-align: left; padding-bottom: 20px;">
                                 <label for="pregunta_si_no" style="display: block;">¿Eres estudiante?</label>
@@ -368,7 +370,7 @@
                                  <input type="text" name="Nombre" required>
                             </div>
                             <div style="text-align: left; padding-bottom: 20px;">
-                                <label style="display: block;">Gorra</label>
+                                <label id="productoAcomprar" for="Opciones_producto" style="display: block;">Gorra</label>
                                 <select name="producto_elegido" id="Opciones_producto" required>
                                      <option value="" disabled selected style="width: 100%;">Elige una opcion</option>
                                      <option value="Gorra_CT_X_BARBAS_HATS">Gorra CT X BARBAS HATS</option>
@@ -394,10 +396,44 @@
                 </div>
             </dialog>
             <hr>
-            <button onclick="miVentana.showModal()" class="boton-pro">Comprar</button>
+            <button onclick="abrirCuadroCompra()" class="boton-pro">Comprar</button>
         </div>
     <script>
+        
+        const datosSeccion = {
+            'Playeras': {
+                titulo: 'COMPRA PLAYERA',
+                descripcion: 'Rellena para comprar tu playera',
+                etiqueta: 'Modelo de Playera',
+                opciones: [
+                    { texto: 'Playera Negra', valor: 'playera_negra'},
+                    { texto: 'Playera Blanca', valor: 'playera_blanca'}
+                ]
+            },
+            'Pantalones': {
+                titulo: 'Comprar PANTALONES',
+                etiqueta: 'Tipo de pantalon',
+                opciones: [
+                    { texto: 'Pantalon Negro', valor: 'pantalon_negro'},
+                    { texto: 'Pantalon Blanco', valor: 'pantalon_blanco'}
+                ]
+            },
+
+            'Gorras': {
+                titulo: 'Comprar Gorra',
+                etiqueta: 'Gorra',
+                opciones: [
+                    { texto: 'CT X BARBAS HATS', valor: 'CT_X_BARBAS_HATS'},
+                    { texto: 'Nose aqui va otra gorra', valor: 'Nose'}
+                    
+                ]
+            }
+        };
+
+        let seccionActiva = 'Playeras';
+
         function cambiarSeccion(idSeccion) {
+            seccionActiva = idSeccion;
             const secciones = document.querySelectorAll('.seccion');
             secciones.forEach(sec => {
                 sec.style.display = 'none';
@@ -405,16 +441,35 @@
             document.getElementById(idSeccion).style.display = 'block';
         }
 
+        function abrirCuadroCompra() {
+            const info = datosSeccion[seccionActiva]
+            const select = document.getElementById('Opciones_producto');
+            const titulo = document.getElementById('tituloCompra');
+            const etiqueta = document.getElementById('productoAcomprar');
+            const descripcion = document.getElementById('DescriCompra');
+
+            if(titulo) titulo.innerText = info.titulo;
+            if(etiqueta) etiqueta.innerText = info.etiqueta;
+            if(descripcion) descripcion.innerText = info.descripcion;
+
+            select.innerHTML = '<option value="" disabled select>Elige una opcion</option>';
+
+            info.opciones.forEach(opc => {
+                let nuevaOpcion = document.createElement('option');
+                nuevaOpcion.value = opc.valor;
+                nuevaOpcion.text = opc.texto;
+                select.appendChild(nuevaOpcion);
+            });
+            
+            document.getElementById('miVentana').showModal();
+        }
+        
         function verificarOpcion() {
             const seleccion = document.getElementById('pregunta_si_no').value;
             const cuadroExtra = document.getElementById('cuadro_extra');
-            
-            if(seleccion === 'Si') {
-                cuadroExtra.style.display = 'block';
-            } else {
-                cuadroExtra.style.display = 'none';
-            }
+            cuadroExtra.style.display = (seleccion === 'Si') ? 'block' : 'none';
         }
+        
     </script>
 </body>
 </html>
