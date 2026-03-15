@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { background-color: black; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; perspective: 1000px; }
+        #container { position: relative; width: 500px; height: 500px; transform-style: preserve-3d; transform: rotateX(15deg); }
+        .layer { position: absolute; width: 100%; height: 100%; fill: #ff2d2d; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <div style="display: flex;" >
+        <a href="InglesVerbs.html">
+            <img src="flor2.png" alt="" style="width: 50px;">
+        </a>
+    </div>
 
+    <div id="container" style="width: 1000px;">
+        <svg style="display: none;">
+            <defs>
+                <path id="heartPath" d="M500,850 C100,550 10,350 100,150 C180,20 420,-20 500,200 C580,-20 820,20 900,150 C990,350 900,550 500,850 Z" />
+            </defs>
+        </svg>
+    </div>
+    
+
+    <script>
+        const container = document.getElementById('container');
+        const layers = 10;
+        const textPaths = [];
+
+        for (let i = 0; i < layers; i++) {
+            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("viewBox", "0 0 1000 1000");
+            svg.className.baseVal = "layer";
+            svg.style.transform = `translateZ(${(i - 5) * 20}px)`;
+            
+            const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            // AUMENTAMOS EL TAMAÑO DE FUENTE AQUÍ
+            text.setAttribute("font-size", "45"); 
+            text.setAttribute("font-weight", "bold");
+            
+            const tPath = document.createElementNS("http://www.w3.org/2000/svg", "textPath");
+            tPath.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", "#heartPath");
+            tPath.textContent = "I LOVE YOU . I LOVE YOU . I LOVE YOU. I LOVE YOU . I LOVE YOU . I LOVE YOU.I LOVE YOU . I LOVE YOU . I LOVE YOUI LOVE YOU . I LOVE YOU . I LOVE YOUI LOVE YOU . I LOVE YOU . I LOVE YOUI LOVE YOU . I LOVE YOU . I LOVE YOUI LOVE YOU . I LOVE YOU . I LOVE YOUI LOVE YOU . I LOVE YOU . I LOVE YOUI LOVE YOU . I LOVE YOU . I LOVE YOUI LOVE YOU . I LOVE YOU . I LOVE YOU ";
+            
+            text.appendChild(tPath);
+            svg.appendChild(text);
+            container.appendChild(svg);
+            textPaths.push(tPath);
+        }
+
+        let offset = 0;
+        function animate() {
+            // REDUCIMOS ESTE NÚMERO PARA IR MÁS LENTO
+            offset += 0.15; 
+            
+            if (offset > 100) offset = 0;
+            textPaths.forEach(tp => tp.setAttribute("startOffset", offset + "%"));
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+</html>
